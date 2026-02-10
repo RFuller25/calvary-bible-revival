@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A True Bible Revival — Calvary Baptist Church, Tinley Park</title>
+    <meta name="description" content="Experience the world's largest traveling collection of ancient Bibles. March 15–18, 2026 at Calvary Baptist Church, Tinley Park, IL.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap');
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C8952E;
+            --gold-light: #E8B84A;
+            --gold-glow: #F5D78E;
+            --navy: #1B2A4A;
+            --navy-light: #2C3E6B;
+            --cream: #FFFBF3;
+            --warm-white: #FFF8F0;
+            --text: #2D2D2D;
+            --text-light: #5A5A5A;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── Hero Section ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('./calvary.png') center/cover no-repeat;
+            filter: brightness(0.35);
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(27, 42, 74, 0.5) 0%,
+                rgba(27, 42, 74, 0.7) 60%,
+                rgba(200, 149, 46, 0.3) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeUp 1s ease-out;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            border: 1.5px solid var(--gold-light);
+            border-radius: 50px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 .accent {
+            color: var(--gold-light);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .hero-date {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: var(--gold-glow);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(200, 149, 46, 0.4);
+        }
+
+        .hero-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(200, 149, 46, 0.5);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 28px;
+            height: 28px;
+            stroke: rgba(255, 255, 255, 0.6);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* ── Section Styles ── */
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        /* ── Collection Section ── */
+        .collection {
+            background: #fff;
+        }
+
+        .collection-intro {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .collection-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.5rem;
+            padding: 0.3rem 1rem;
+            border-radius: 8px;
+            margin-right: 0.25rem;
+        }
+
+        .bible-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .bible-card {
+            background: var(--cream);
+            border: 1px solid rgba(200, 149, 46, 0.15);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .bible-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(27, 42, 74, 0.08);
+            border-color: var(--gold-light);
+        }
+
+        .bible-year {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .bible-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .facsimile-note {
+            margin-top: 2rem;
+            padding: 1.25rem 1.5rem;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .facsimile-note strong {
+            color: var(--gold-glow);
+        }
+
+        /* ── Image Showcase ── */
+        .showcase {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .showcase-img-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(27, 42, 74, 0.15);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .showcase-img-wrapper img {
+            width: 100%;
+            display: block;
+        }
+
+        .showcase-caption {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ── Speaker Section ── */
+        .speaker {
+            background: #fff;
+            text-align: center;
+        }
+
+        .speaker-card {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 3rem;
+            border: 2px solid rgba(200, 149, 46, 0.2);
+            border-radius: 20px;
+            background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+        }
+
+        .speaker-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .speaker-role {
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .speaker-desc {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ── Details Section ── */
+        .details {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: #fff;
+        }
+
+        .details .section-label {
+            color: var(--gold-glow);
+        }
+
+        .details .section-title {
+            color: #fff;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .detail-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(200, 149, 46, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detail-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold-light);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-glow);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .detail-sub {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.15rem;
+        }
+
+        /* ── Action Buttons ── */
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(200, 149, 46, 0.35);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(200, 149, 46, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-light);
+            color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* ── Calendar Dropdown ── */
+        .calendar-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .calendar-menu {
+            display: none;
+            position: absolute;
+            bottom: calc(100% + 0.5rem);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            min-width: 220px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .calendar-menu.show {
+            display: block;
+            animation: fadeUp 0.2s ease-out;
+        }
+
+        .calendar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1.25rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+
+        .calendar-menu a:hover {
+            background: var(--cream);
+        }
+
+        .calendar-menu a + a {
+            border-top: 1px solid #eee;
+        }
+
+        .calendar-menu svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* ── Footer CTA ── */
+        .final-cta {
+            background: var(--cream);
+            text-align: center;
+            padding: 5rem 1.5rem;
+        }
+
+        .final-cta .section-title {
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .btn-gold {
+            font-size: 1.1rem;
+            padding: 1.1rem 2.8rem;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            background: #fff;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            line-height: 2;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--navy);
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            section {
+                padding: 3.5rem 1.25rem;
+            }
+
+            .bible-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .bible-card {
+                padding: 1rem;
+            }
+
+            .bible-year {
+                font-size: 1.3rem;
+            }
+
+            .speaker-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .details-grid {
+                gap: 1.5rem;
+            }
+
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .calendar-menu {
+                left: auto;
+                right: 0;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-label">You're Invited</div>
+        <h1>View a True Bible Revival</h1>
+        <p class="hero-subtitle">
+            Witness the world's largest traveling collection of ancient Bibles and
+            Bible texts — over 400 pieces spanning nearly 800 years of history.
+        </p>
+        <div class="hero-date">March 15 – 18, 2026</div>
+        <a href="#details" class="hero-cta">See Event Details</a>
+    </div>
+    <div class="scroll-indicator">
+        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+</section>
+
+<!-- ═══════ COLLECTION ═══════ -->
+<section class="collection" id="collection">
+    <div class="container fade-in">
+        <div class="section-label">The Collection</div>
+        <h2 class="section-title">Centuries of Scripture,<br>Together in One Place</h2>
+        <p class="collection-intro">
+            See <span class="collection-highlight">400+</span> pieces of
+            Bible history up close — original printings, hand-lettered manuscripts,
+            and faithful facsimiles of the texts that shaped the world.
+        </p>
+        <div class="bible-grid">
+            <div class="bible-card">
+                <div class="bible-year">1250</div>
+                <div class="bible-name">Latin Bible</div>
+            </div>
+            <div class="bible-card">
+                <div class="bible-year">1539</div>
+                <div class="bible-name">Matthews Bible</div>
+            </div>
+            <div class="bible-card">
+                <div class="bible-year">1550</div>
+                <div class="bible-name">Stephanus</div>
+            </div>
+            <div class="bible-card">
+                <div class="bible-year">1568</div>
+                <div class="bible-name">Biblia Del Oso</div>
+            </div>
+            <div class="bible-card">
+                <div class="bible-year">1602</div>
+                <div class="bible-name">Reina Valera</div>
+            </div>
+            <div class="bible-card">
+                <div class="bible-year">1608</div>
+                <div class="bible-name">Geneva Bible</div>
+            </div>
+            <div class="bible-card">
+                <div class="bible-year">1613</div>
+                <div class="bible-name">King James Bible</div>
+            </div>
+            <div class="bible-card">
+                <div class="bible-year">1665</div>
+                <div class="bible-name">Italian Bible</div>
+            </div>
+        </div>
+        <div class="facsimile-note">
+            <strong>Also on display:</strong> facsimiles of the Gutenberg Bible, Wycliffe Bible,
+            Tyndale New Testament, Codex Vaticanus, and Codex Sinaiticus.
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ SHOWCASE ═══════ -->
+<section class="showcase">
+    <div class="container fade-in">
+        <div class="showcase-img-wrapper">
+            <img src="./bibles.jpg" alt="Ancient Bibles from the traveling collection" loading="lazy">
+        </div>
+        <p class="showcase-caption">A glimpse at some of the ancient Bibles you'll see in person.</p>
+    </div>
+</section>
+
+<!-- ═══════ SPEAKER ═══════ -->
+<section class="speaker" id="speaker">
+    <div class="container fade-in">
+        <div class="section-label">Featured Speaker</div>
+        <h2 class="section-title">Monte Watts, Jr.</h2>
+        <div class="speaker-card">
+            <div class="speaker-name">Evangelist Monte Watts, Jr.</div>
+            <div class="speaker-role">Bible Evangelist</div>
+            <p class="speaker-desc">
+                Come and hear Evangelist Monte Watts, Jr. magnify the Bible to be the
+                very Word of God. Each evening, experience powerful preaching and
+                a deeper understanding of Scripture's enduring truth.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ DETAILS ═══════ -->
+<section class="details" id="details">
+    <div class="container fade-in">
+        <div class="section-label">Event Details</div>
+        <h2 class="section-title">Join Us This March</h2>
+        <div class="details-grid">
+            <div class="detail-item">
+                <div class="detail-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="detail-label">Dates</div>
+                    <div class="detail-value">March 15 – 18, 2026</div>
+                    <div class="detail-sub">Sunday through Wednesday</div>
+                </div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="detail-label">Time</div>
+                    <div class="detail-value">7:00 PM Nightly</div>
+                    <div class="detail-sub">Each evening, Sunday – Wednesday</div>
+                </div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="detail-label">Location</div>
+                    <div class="detail-value">Calvary Baptist Church</div>
+                    <div class="detail-sub">17430 94th Ave, Tinley Park, IL</div>
+                </div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 010 7.75"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="detail-label">Admission</div>
+                    <div class="detail-value">Free &amp; Open to All</div>
+                    <div class="detail-sub">Everyone is welcome</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=Calvary+Baptist+Church+17430+94th+Ave+Tinley+Park+IL"
+               target="_blank" rel="noopener" class="btn btn-gold">
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Get Directions
+            </a>
+
+            <div class="calendar-dropdown">
+                <button class="btn btn-outline" onclick="toggleCalendar()" type="button">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    Add to Calendar
+                </button>
+                <div class="calendar-menu" id="calendarMenu">
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Bible+Revival+%E2%80%93+Calvary+Baptist+Church&dates=20260315T190000/20260315T210000&recur=RRULE:FREQ%3DDAILY;COUNT%3D4&location=Calvary+Baptist+Church,+17430+94th+Ave,+Tinley+Park,+IL&details=Experience+the+world%27s+largest+traveling+collection+of+ancient+Bibles+%E2%80%94+over+400+pieces.+Featuring+evangelist+Monte+Watts.+Nightly+at+7%3A00+PM,+March+15%E2%80%9318."
+                       target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Google Calendar
+                    </a>
+                    <a href="#" onclick="downloadICS(); return false;">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download .ics File
+                    </a>
+                </div>
+            </div>
+
+            <a href="https://www.calvarybaptisttinley.com/" target="_blank" rel="noopener" class="btn btn-outline">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                </svg>
+                Church Website
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=100080012090008" target="_blank" rel="noopener" class="btn btn-outline">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Facebook
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ FINAL CTA ═══════ -->
+<section class="final-cta">
+    <div class="container fade-in">
+        <div class="section-label">All Are Welcome</div>
+        <h2 class="section-title">Don't Miss This<br>Once-in-a-Lifetime Experience</h2>
+        <p>Four nights of powerful preaching and a rare opportunity to see Scripture's history with your own eyes.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Calvary+Baptist+Church+17430+94th+Ave+Tinley+Park+IL"
+           target="_blank" rel="noopener" class="btn btn-gold">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Get Directions
+        </a>
+    </div>
+</section>
+
+<footer>
+    Calvary Baptist Church &middot; 17430 94th Ave, Tinley Park, IL
+    <br>
+    <a href="https://www.calvarybaptisttinley.com/" target="_blank" rel="noopener">calvarybaptisttinley.com</a>
+    &middot;
+    <a href="https://www.facebook.com/profile.php?id=100080012090008" target="_blank" rel="noopener">Facebook</a>
+</footer>
+
+<script>
+    // ── Scroll-triggered fade-in ──
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── Calendar dropdown ──
+    function toggleCalendar() {
+        document.getElementById('calendarMenu').classList.toggle('show');
+    }
+
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.calendar-dropdown')) {
+            document.getElementById('calendarMenu').classList.remove('show');
+        }
+    });
+
+    // ── ICS download ──
+    function downloadICS() {
+        const events = [];
+        const dates = [
+            { start: '20260315T190000', end: '20260315T210000' },
+            { start: '20260316T190000', end: '20260316T210000' },
+            { start: '20260317T190000', end: '20260317T210000' },
+            { start: '20260318T190000', end: '20260318T210000' }
+        ];
+
+        dates.forEach(d => {
+            events.push(
+                'BEGIN:VEVENT\r\n' +
+                'DTSTART;TZID=America/Chicago:' + d.start + '\r\n' +
+                'DTEND;TZID=America/Chicago:' + d.end + '\r\n' +
+                'SUMMARY:A True Bible & Revival — Calvary Baptist Church\r\n' +
+                'DESCRIPTION:Experience the world\'s largest traveling collection of ancient Bibles — over 400 pieces. Featuring evangelist Monte Watts, Jr.. Nightly at 7:00 PM.\r\n' +
+                'LOCATION:Calvary Baptist Church\\, 17430 94th Ave\\, Tinley Park\\, IL\r\n' +
+                'END:VEVENT'
+            );
+        });
+
+        const ics =
+            'BEGIN:VCALENDAR\r\n' +
+            'VERSION:2.0\r\n' +
+            'PRODID:-//A True Bible & Revival//EN\r\n' +
+            'CALSCALE:GREGORIAN\r\n' +
+            'METHOD:PUBLISH\r\n' +
+            'BEGIN:VTIMEZONE\r\n' +
+            'TZID:America/Chicago\r\n' +
+            'BEGIN:STANDARD\r\n' +
+            'DTSTART:19701101T020000\r\n' +
+            'RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU\r\n' +
+            'TZOFFSETFROM:-0500\r\n' +
+            'TZOFFSETTO:-0600\r\n' +
+            'TZNAME:CST\r\n' +
+            'END:STANDARD\r\n' +
+            'BEGIN:DAYLIGHT\r\n' +
+            'DTSTART:19700308T020000\r\n' +
+            'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU\r\n' +
+            'TZOFFSETFROM:-0600\r\n' +
+            'TZOFFSETTO:-0500\r\n' +
+            'TZNAME:CDT\r\n' +
+            'END:DAYLIGHT\r\n' +
+            'END:VTIMEZONE\r\n' +
+            events.join('\r\n') + '\r\n' +
+            'END:VCALENDAR';
+
+        const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'bible-revival.ics';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        document.getElementById('calendarMenu').classList.remove('show');
+    }
+</script>
+
+</body>
+</html>
