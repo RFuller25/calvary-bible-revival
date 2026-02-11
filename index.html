@@ -140,6 +140,31 @@
             box-shadow: 0 8px 32px rgba(200, 149, 46, 0.5);
         }
 
+        .explore-btn {
+            display: inline-block;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 0.15rem 0.7rem;
+            border-radius: 6px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+            background-size: 200% 200%;
+            animation: radiantShift 2.5s ease infinite;
+            box-shadow: 0 0 12px rgba(200, 149, 46, 0.5), 0 0 24px rgba(200, 149, 46, 0.25);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            box-shadow: 0 0 18px rgba(200, 149, 46, 0.7), 0 0 36px rgba(200, 149, 46, 0.4);
+            transform: scale(1.05);
+        }
+
+        @keyframes radiantShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
@@ -627,11 +652,12 @@
         <div class="hero-label">You're Invited</div>
         <h1>View a True Bible Revival</h1>
         <p class="hero-subtitle">
-            Explore the world's largest traveling collection of ancient Bibles
-            and Bible texts, right here in Tinley Park.Over 400 pieces spanning nearly 800 years of history, right here for you to witness.
+            <a href="#details" class="explore-btn">Explore</a> the world's largest traveling collection of ancient Bibles
+            and Bible texts, right here in Tinley Park.Over 400 pieces spanning nearly 800 years of history.
         </p>
         <div class="hero-date">March 15 – 18, 2026</div>
         <a href="#details" class="hero-cta">See Event Details</a>
+
     </div>
     <div class="scroll-indicator">
         <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
@@ -746,7 +772,7 @@
                 </div>
                 <div>
                     <div class="detail-label">Schedule</div>
-                    <div class="detail-value">Sunday Services 9:45 AM, 10:45 AM, and 6PM. <br>Monday - Wednesday Bible Viewing 6-9PM, service at 7PM</div>
+                    <div class="detail-value">Sunday Services 9:45AM, 10:45AM, and 6PM. <br>Monday - Wednesday Bible Viewing 6-9PM, service at 7PM</div>
                 </div>
             </div>
             <div class="detail-item">
